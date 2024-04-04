@@ -1,4 +1,4 @@
-# Xata DB - Next JS SRC - Payload CMS
+# Xata DB - Next JS SRC - Payload CMS <img style=" height:38px; padding-top:10px;" src="https://i.ibb.co/ydRpMMZ/Untitled.png"/>
 
 ## Dev Notes
 
