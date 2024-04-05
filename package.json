@@ -24,6 +24,7 @@
     "@vercel/speed-insights": "^1.0.10",
     "cross-env": "^7.0.3",
     "dotenv": "^8.2.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
     "express": "^4.19.2",
     "payload": "^2.0.0"
   },
