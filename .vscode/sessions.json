@@ -1,0 +1,70 @@
+{
+    "$schema": "https://cdn.statically.io/gh/nguyenngoclongdev/cdn/main/schema/v10/terminal-keeper.json",
+    "theme": "iconic",
+    "active": "default",
+    "activateOnStartup": true,
+    "keepExistingTerminals": false,
+    "sessions": {
+        "default": [
+            {
+                "name": "monoRepo",
+                "autoExecuteCommands": true,
+                "icon": "beaker",
+                "color": "terminal.ansiBrightCyan",
+                "commands": [
+                    "echo hello"
+                ]
+            },
+            [
+                {
+                    "name": "Server (Node)",
+                    "commands": [
+                        "cd payload-xata-backend"
+                    ]
+                },
+                {
+                    "name": "Installs (Server)",
+                    "commands": [
+                        "cd payload-xata-backend"
+                    ]
+                }
+            ],
+            [
+                {
+                    "name": "Frontend (Node)",
+                    "commands": [
+                        "cd payload-next-frontend"
+                    ]
+                },
+                {
+                    "name": "Installs (Frontend)",
+                    "commands": [
+                        "cd payload-next-frontend"
+                    ]
+                }
+            ],
+            [
+                {
+                    "name": "React-Email (Node)",
+                    "commands": [
+                        "cd react-email-server"
+                    ]
+                },
+                {
+                    "name": "Installs (React-Email)",
+                    "commands": [
+                        "cd react-emil-server"
+                    ]
+                }
+            ]
+        ],
+        "saved-session": [
+            {
+                "name": "mono-repo-save",
+                "commands": [
+                    ""
+                ]
+            }
+        ]
+    }
+}

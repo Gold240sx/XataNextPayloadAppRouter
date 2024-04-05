@@ -1,0 +1,12 @@
+{
+	"extends": "next",
+	"rules": {
+		"no-mixed-spaces-and-tabs": "off"
+	}
+	// in the event that this needs to be in the root container folder
+	// "settings": {
+	// 	"next": {
+	// 		"rootDir": "payload-next-frontend"
+	// 	}
+	// }
+}
