@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react"
 
-const UserDashboad = ({ children }: { children: ReactNode }) => {
+const UserDashboad = () => {
 	return (
 		<div>
 			<h1>User Dashboad</h1>
