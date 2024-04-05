@@ -1,0 +1,44 @@
+{
+	"$schema": "https://cdn.statically.io/gh/nguyenngoclongdev/cdn/main/schema/v10/terminal-keeper.json",
+	"theme": "inkwell",
+	"active": "default",
+	"activateOnStartup": true,
+	"keepExistingTerminals": false,
+	"sessions": {
+		"default": [
+			{
+				"name": "Server + Frontend",
+				"autoExecuteCommands": true,
+				"icon": "beaker",
+				"color": "terminal.ansiBrightCyan",
+				"commands": ["echo hello"]
+			},
+			[
+				{
+					"name": "Server (Node)",
+					"commands": ["npm run dev"]
+				},
+				{
+					"name": "Installs (Server)",
+					"commands": [""]
+				}
+			],
+			[
+				{
+					"name": "Frontend (Node)",
+					"commands": ["cd payload-next-frontend"]
+				},
+				{
+					"name": "Installs (Frontend)",
+					"commands": ["cd payload-next-frontend"]
+				}
+			]
+		],
+		"saved-session": [
+			{
+				"name": "server-frontend",
+				"commands": [""]
+			}
+		]
+	}
+}
