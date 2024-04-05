@@ -1,10 +1,11 @@
 import type { Config } from "tailwindcss"
+import { withUt } from "uploadthing/tw"
 
 // const {
 // 	default: flattenColorPalette,
 // } = require("tailwindcss/lib/util/flattenColorPalette")
 
-const config = {
+const config = withUt({
 	darkMode: ["class"],
 	content: [
 		"./pages/**/*.{ts,tsx}",
@@ -82,7 +83,7 @@ const config = {
 		require("tailwindcss-animate"),
 		// addVariablesForColors,
 	],
-} satisfies Config
+}) satisfies Config
 
 // This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
 // function addVariablesForColors({ addBase, theme }: any) {

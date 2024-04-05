@@ -6,6 +6,7 @@ import Script from "next/script"
 import Head from "next/head"
 import localFont from "next/font/local"
 import test from "../styles/SCSS/test.module.scss"
+import { sonner } from "@/dependencies/1_index"
 import "../styles/globals.css"
 
 const inter = Inter({
@@ -80,6 +81,8 @@ export default function RootLayout({
 				</div>
 				<p className="red">not red text</p>
 				{children}
+
+				<sonner.Toaster />
 			</body>
 			{/* <Analytics /> */}
 		</html>

@@ -1,8 +1,8 @@
 {
-	"include": ["next-env.d.ts", "**/*.ts", ".next/types/**/*.ts"],
-	// "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
 	"exclude": ["node_modules"],
 	"compilerOptions": {
+		"baseUrl": ".",
 		"lib": ["dom", "dom.iterable", "esnext"],
 		"allowJs": true,
 		"skipLibCheck": true,
@@ -21,14 +21,18 @@
 			}
 		],
 		"paths": {
-			"@/*": ["./src/*"],
-			"@/assets/*": ["./src/app/assets/*"],
-			"@/shadcn/*": ["./src/components/*"],
-			"@/utils/*": ["./utils/*"],
-			"@/myComponents/*": ["./src/app/myComponents/*"],
-			"@/pages/*": ["./src/app/pages/*"],
-			"@/context/*": ["./src/app/context/*"],
-			"@/functions/*": ["./src/app/functions/*"]
+			"@/*": ["src/*"],
+			"@/app/*": ["src/app/*"],
+			"@/api/*": ["src/app/api/*"],
+			"@/assets/*": ["src/app/assets/*"],
+			"@/shadcn/*": ["src/components/*"],
+			"@/utils/*": ["src/utils/*"],
+			"@/lib/": ["src/lib/"],
+			"@/dependencyIndex": ["src/dependencies/1_index"],
+			"@/myComponents/*": ["src/app/myComponents/*"],
+			"@/pages/*": ["src/app/pages/*"],
+			"@/context/*": ["src/app/context/*"],
+			"@/functions/*": ["src/app/functions/*"]
 		}
 	}
 }
