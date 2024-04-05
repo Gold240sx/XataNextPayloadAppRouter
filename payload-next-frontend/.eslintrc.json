@@ -4,10 +4,4 @@
 		"no-mixed-spaces-and-tabs": "off",
 		"react/no-unescaped-entities": "off"
 	}
-	// in the event that this needs to be in the root container folder
-	// "settings": {
-	// 	"next": {
-	// 		"rootDir": "payload-next-frontend"
-	// 	}
-	// }
 }

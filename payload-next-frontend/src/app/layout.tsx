@@ -1,10 +1,12 @@
+import React from "react"
 import type { Metadata } from "next"
 import { Inter, Roboto_Mono } from "next/font/google"
 // import { Analytics } from "@vercel/analytics/react"
 import Script from "next/script"
 import Head from "next/head"
 import localFont from "next/font/local"
-import "./globals.css"
+import test from "../styles/SCSS/test.module.scss"
+import "../styles/globals.css"
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -71,7 +73,14 @@ export default function RootLayout({
 						/>
 					)}
 			</Head>
-			<body className={inter.className}>{children}</body>
+			<body className={`${inter.className}`}>
+				<div className="content">
+					<p className="red">red text</p>
+					<h1 className={test.scssColor}>hello scss change</h1>
+				</div>
+				<p className="red">not red text</p>
+				{children}
+			</body>
 			{/* <Analytics /> */}
 		</html>
 	)
