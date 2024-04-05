@@ -1,3 +1,3 @@
-// import {  } from "axios"
+import axios from "axios"
 
-// export { axios }
+export { axios }
