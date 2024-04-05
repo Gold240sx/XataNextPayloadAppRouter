@@ -20,6 +20,7 @@
     "@payloadcms/db-postgres": "^0.x",
     "@payloadcms/plugin-cloud": "^3.0.0",
     "@payloadcms/richtext-slate": "^1.0.0",
+    "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.10",
     "cross-env": "^7.0.3",
     "dotenv": "^8.2.0",

@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Inter, Roboto_Mono } from "next/font/google"
+import { Analytics } from "@vercel/analytics/react"
 import Script from "next/script"
 import Head from "next/head"
 import localFont from "next/font/local"
@@ -71,6 +72,7 @@ export default function RootLayout({
 					)}
 			</Head>
 			<body className={inter.className}>{children}</body>
+			<Analytics />
 		</html>
 	)
 }
