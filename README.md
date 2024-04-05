@@ -17,10 +17,19 @@ This is a Next JS monorepo, _USING_ the App router. It utlizes, Xata DB, Next JS
 
 -   Next JS
 -   Xata DB
+-   Vercel
 -   Payload CMS
 -   Tailwind CSS
+-   Scss
 -   React-Email
+-   Resend
+-   UploadThing
+-   GSAP
 -   Axios
--   Vercel
+
+The project uses the following structure strategies:
+
+-   Barrel FIles for dependencies
+-   Seperation between front-end and back-end
 
 ### For original installation instructions see DEVreadme.md

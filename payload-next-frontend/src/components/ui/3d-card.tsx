@@ -1,7 +1,4 @@
 "use client"
-
-import { cn } from "@/utils/cn"
-import Image from "next/image"
 import React, {
 	createContext,
 	useState,
@@ -9,6 +6,9 @@ import React, {
 	useRef,
 	useEffect,
 } from "react"
+import Image from "next/image"
+import { cn } from "@/utils/cn"
+// import { cn } from "../../utils/cn"
 
 const MouseEnterContext = createContext<
 	[boolean, React.Dispatch<React.SetStateAction<boolean>>] | undefined
