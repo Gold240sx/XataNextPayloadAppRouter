@@ -1,0 +1,53 @@
+input[type="file"] {
+	align-items: baseline;
+	color: inherit;
+	text-align: start;
+	cursor: pointer;
+	border: none;
+}
+
+input[type="file"]:before {
+	content: "";
+	position: absolute;
+	border: 5px dashed #fcfcfc;
+	top: -3px;
+	bottom: -3px;
+	left: -3px;
+	right: -3px;
+}
+
+input.inline-input {
+	height: fit-content;
+	padding: 0;
+}
+
+input.inline-input::placeholder {
+	color: #649587;
+	opacity: 1;
+}
+
+input.inline-input:disabled {
+	background-color: rgba(255, 255, 255, 0) !important;
+	border-bottom: 1px white solid;
+}
+
+input.inline-input:disabled::placeholder {
+	color: rgb(253, 253, 253);
+	opacity: 1;
+}
+
+.inline-button {
+	font-size: 1.2em;
+	padding: 0px 10px;
+	margin: unset;
+	margin-top: unset !important;
+	max-width: fit-content;
+	transform: translateY(-5px);
+	margin-left: 15px;
+	background-color: #89c9b4;
+	box-shadow: unset;
+}
+
+.inline-button:hover {
+	background-color: aquamarine;
+}

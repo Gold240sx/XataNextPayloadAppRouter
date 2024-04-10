@@ -2,7 +2,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@import "../styles/SCSS/global.module.scss";
+@import "../styles/sass/global.module.scss";
 
 @layer base {
 	:root {
@@ -84,5 +84,11 @@
 
 	.no-visible-scrollbar::-webkit-scrollbar {
 		display: none;
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		/* .App-logo {
+			animation: App-logo-spin infinite 20s linear;
+		} */
 	}
 }

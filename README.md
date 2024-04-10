@@ -1,6 +1,5 @@
 # Xata DB - Next JS SRC - Payload CMS <img style=" height:38px; padding-top:10px;" src="https://i.ibb.co/ydRpMMZ/Untitled.png"/>
 
-
 ## Dev Notes
 
 repo: https://github.com/Gold240sx/XataNextPayloadAppRouter<br />
@@ -17,19 +16,23 @@ This is a Next JS monorepo, _USING_ the App router. It utlizes, Xata DB, Next JS
 
 -   Next JS
 -   Xata DB
+-   Typescript
 -   Vercel
 -   Payload CMS
 -   Tailwind CSS
--   Scss
+-   Tailwind UI
+-   Flowbite Pro
+-   Sass CSS
 -   React-Email
 -   Resend
 -   UploadThing
--   GSAP
+-   GSAP Pro
 -   Axios
+-   Apex Charts
 
 The project uses the following structure strategies:
 
--   Barrel FIles for dependencies
+-   Barrel FIles for dependencies.
 -   Seperation between front-end and back-end
 
 ### For original installation instructions see DEVreadme.md

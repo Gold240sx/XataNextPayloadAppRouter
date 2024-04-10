@@ -1,2 +1,59 @@
 DEVreadme.md
 TODO.md
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+node_modules
+.DS_Store
+build
+dist
+media
+
+.env
+.env.local
+.env/*
+.npmrc
+
+# vercel
+.vercel
+
+# payload-next-frontend/build
+# payload-next-frontend/dist
+# payload-next-frontend/media
+# payload-next-frontend/node_modules
+# payload-next-frontend/.DS_Store
+# payload-next-frontend/.env
+
+# payload-xata-backend/build
+# payload-xata-backend/dist
+# payload-xata-backend/media
+# payload-xata-backend/node_modules
+# payload-xata-backend/.DS_Store
+# payload-xata-backend/.env

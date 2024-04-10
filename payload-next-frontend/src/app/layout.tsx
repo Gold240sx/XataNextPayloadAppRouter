@@ -5,8 +5,8 @@ import { Inter, Roboto_Mono } from "next/font/google"
 import Script from "next/script"
 import Head from "next/head"
 import localFont from "next/font/local"
-import test from "../styles/SCSS/test.module.scss"
-import { sonner } from "@/dependencies/1_index"
+import test from "../styles/sass/test.module.scss"
+import { ThemeModeScript } from "flowbite-react"
 import "../styles/globals.css"
 
 const inter = Inter({
@@ -73,6 +73,8 @@ export default function RootLayout({
 							strategy="lazyOnload"
 						/>
 					)}
+				<script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+				<ThemeModeScript />
 			</Head>
 			<body className={`${inter.className}`}>
 				<div className="content">
@@ -81,8 +83,6 @@ export default function RootLayout({
 				</div>
 				<p className="red">not red text</p>
 				{children}
-
-				<sonner.Toaster />
 			</body>
 			{/* <Analytics /> */}
 		</html>
