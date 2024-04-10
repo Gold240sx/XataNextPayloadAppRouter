@@ -11,7 +11,7 @@ const Hero = ({
 }) => {
 	return (
 		<div>
-			// how we build the templates
+			{/* // how we build the templates */}
 			<h2>{heading}</h2>
 			<p>{text}</p>
 		</div>
