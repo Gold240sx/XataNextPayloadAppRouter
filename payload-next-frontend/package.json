@@ -55,6 +55,7 @@
 		"@radix-ui/react-toggle": "^1.0.3",
 		"@radix-ui/react-toggle-group": "^1.0.4",
 		"@radix-ui/react-tooltip": "^1.0.7",
+		"@types/webidl-conversions": "^7.0.3",
 		"@uploadthing/react": "^6.4.1",
 		"apexcharts": "^3.48.0",
 		"axios": "^1.6.8",
