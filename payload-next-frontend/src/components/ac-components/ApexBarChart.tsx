@@ -1,4 +1,4 @@
-import { ApexCharts } from "@/dependencyIndex"
+import { ApexCharts } from "@/lib/dependencies/1_index"
 const { Chart } = ApexCharts
 
 const ApexBarChart = ({ horizontal }: any) => {
