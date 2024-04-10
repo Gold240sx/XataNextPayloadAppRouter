@@ -1,6 +1,6 @@
 "use client"
 // import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts"
-import { Recharts } from "@/lib/dependencies/1_index"
+import { Recharts } from "@/dependencies/1_index"
 const {
 	Line,
 	LineChart,

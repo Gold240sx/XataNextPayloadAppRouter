@@ -1,5 +1,5 @@
 import React from "react"
-import { ApexCharts } from "@/lib/dependencies/1_index"
+import { ApexCharts } from "@/dependencies/1_index"
 const { Chart } = ApexCharts
 
 const ApexAreaChart = () => {

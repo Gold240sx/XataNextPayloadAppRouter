@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Recharts } from "@/lib/dependencies/1_index"
+import { Recharts } from "@/dependencies/1_index"
 const { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend } = Recharts
 
 const data = [

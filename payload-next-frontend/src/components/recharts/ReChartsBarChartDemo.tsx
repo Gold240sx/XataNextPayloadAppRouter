@@ -1,5 +1,5 @@
 "use client"
-import { Recharts } from "@/lib/dependencies/1_index"
+import { Recharts } from "@/dependencies/1_index"
 const { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } = Recharts
 
 const data = [
