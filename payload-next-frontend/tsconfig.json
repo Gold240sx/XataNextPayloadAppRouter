@@ -28,7 +28,7 @@
 			"@/shadcn/*": ["src/components/*"],
 			"@/utils/*": ["src/utils/*"],
 			"@/lib/": ["src/lib/"],
-			"@/dependencyIndex": ["src/dependencies/1_index"],
+			"@/dependencyIndex": ["src/lib/dependencies/1_index"],
 			"@/myComponents/*": ["src/app/myComponents/*"],
 			"@/pages/*": ["src/app/pages/*"],
 			"@/context/*": ["src/app/context/*"],

@@ -1,4 +1,4 @@
-import { Recharts } from "@/dependencyIndex"
+import { Recharts } from "@/lib/dependencies/1_index"
 const { PieChart, Pie, Cell } = Recharts
 
 const data = [

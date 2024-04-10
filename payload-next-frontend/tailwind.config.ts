@@ -1,6 +1,12 @@
 import type { Config } from "tailwindcss"
 import { withUt } from "uploadthing/tw"
 const flowbite = require("flowbite-react/tailwind")
+import {
+	fluidExtractor,
+	fluidCorePlugins,
+	defaultThemeScreensInRems,
+	defaultThemeFontSizeInRems,
+} from "fluid-tailwind"
 
 // const {
 // 	default: flattenColorPalette,
@@ -27,6 +33,8 @@ const config = withUt({
 				"2xl": "1400px",
 			},
 		},
+		fontSize: defaultThemeFontSizeInRems,
+		screens: defaultThemeScreensInRems,
 		extend: {
 			colors: {
 				border: "hsl(var(--border))",
@@ -84,6 +92,7 @@ const config = withUt({
 			},
 		},
 	},
+	extract: fluidExtractor(),
 	plugins: [
 		require("flowbite/plugin"),
 		require("flowbite/plugin")({
@@ -94,6 +103,7 @@ const config = withUt({
 		require("@tailwindcss/forms"),
 		require("@tailwindcss/aspect-ratio"),
 		require("@tailwindcss/container-queries"),
+		fluidCorePlugins,
 		// addVariablesForColors,
 	],
 }) satisfies Config
