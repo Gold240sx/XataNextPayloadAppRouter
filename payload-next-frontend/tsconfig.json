@@ -25,14 +25,18 @@
 			"@/app/*": ["src/app/*"],
 			"@/api/*": ["src/app/api/*"],
 			"@/assets/*": ["src/app/assets/*"],
+			"@/actions/*": ["src/app/actions/*"],
 			"@/shadcn/*": ["src/components/*"],
 			"@/utils/*": ["src/utils/*"],
 			"@/lib/": ["src/lib/"],
-			"@/dependencyIndex": ["src/lib/dependencies/1_index"],
-			"@/myComponents/*": ["src/app/myComponents/*"],
-			"@/pages/*": ["src/app/pages/*"],
+			"@/dependencyIndex": ["src/dependencies/1_index"],
+			"@/myComponents/*": ["src/myComponents/*"],
+			// "@/pages/*": ["src/app/pages/*"],
+			"@/publicPages/*": ["src/app/(pages)/(public)/*"],
+			"@/adminPages/*": ["src/app/(pages)/(admin)/*"],
 			"@/context/*": ["src/app/context/*"],
-			"@/functions/*": ["src/app/functions/*"]
+			"@/functions/*": ["src/app/functions/*"],
+			"@/emails/*": ["../react-email-server/emails/*"]
 		}
 	}
 }

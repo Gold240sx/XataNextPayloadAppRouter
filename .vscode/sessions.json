@@ -19,7 +19,8 @@
                 {
                     "name": "Server (Node)",
                     "commands": [
-                        "cd payload-xata-backend"
+                        "cd payload-xata-backend",
+                        "npm run dev"
                     ]
                 },
                 {
@@ -33,7 +34,8 @@
                 {
                     "name": "Frontend (Node)",
                     "commands": [
-                        "cd payload-next-frontend"
+                        "cd payload-next-frontend",
+                        "npm run dev"
                     ]
                 },
                 {
@@ -47,7 +49,8 @@
                 {
                     "name": "React-Email (Node)",
                     "commands": [
-                        "cd react-email-server"
+                        "cd react-email-server",
+                        "npm run dev"
                     ]
                 },
                 {

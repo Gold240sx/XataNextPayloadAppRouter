@@ -8,6 +8,7 @@ import localFont from "next/font/local"
 import test from "../styles/sass/test.module.scss"
 import { ThemeModeScript } from "flowbite-react"
 import "../styles/globals.css"
+import { Toaster } from "@/components/shad-cn/sonner"
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -83,6 +84,7 @@ export default function RootLayout({
 				</div>
 				<p className="red">not red text</p>
 				{children}
+				<Toaster />
 			</body>
 			{/* <Analytics /> */}
 		</html>
