@@ -1,6 +1,13 @@
-build
-dist
-/media
+DEVreadme.md
+TODO.md
+
 node_modules
 .DS_Store
+build
+dist
+media
+
 .env
+.env.local
+.env/*
+.npmrc

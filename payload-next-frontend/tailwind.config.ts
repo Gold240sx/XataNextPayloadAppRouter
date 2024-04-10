@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss"
 import { withUt } from "uploadthing/tw"
+const flowbite = require("flowbite-react/tailwind")
 
 // const {
 // 	default: flattenColorPalette,
@@ -10,8 +11,12 @@ const config = withUt({
 	content: [
 		"./pages/**/*.{ts,tsx}",
 		"./components/**/*.{ts,tsx}",
+		"./public/**/*.html",
 		"./app/**/*.{ts,tsx}",
 		"./src/**/*.{ts,tsx}",
+		"./node_modules/flowbite/**/*.js",
+		"./node_modules/flowbite-react/lib/**/*.js",
+		flowbite.content(),
 	],
 	prefix: "",
 	theme: {
@@ -80,7 +85,15 @@ const config = withUt({
 		},
 	},
 	plugins: [
+		require("flowbite/plugin"),
+		require("flowbite/plugin")({
+			charts: true,
+		}),
 		require("tailwindcss-animate"),
+		require("@tailwindcss/typography"),
+		require("@tailwindcss/forms"),
+		require("@tailwindcss/aspect-ratio"),
+		require("@tailwindcss/container-queries"),
 		// addVariablesForColors,
 	],
 }) satisfies Config
