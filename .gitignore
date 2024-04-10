@@ -39,7 +39,6 @@ media
 .env
 .env.local
 .env/*
-.npmrc
 
 # vercel
 .vercel
