@@ -1,0 +1,29 @@
+{
+	"name": "emails",
+	"version": "0.0.18",
+	"private": true,
+	"workspaces": [
+		".react-email"
+	],
+	"scripts": {
+		"dev": "email dev --port 4000",
+		"export": "email export",
+		"install:all": "npm install && cd react-email-starter && npm install",
+		"dev:root": "next dev",
+		"dev:preview": "cd react-email-starter && npm run dev",
+		"format:check": "prettier --check \"**/*.{ts,tsx,md}\"",
+		"format": "prettier --write \"**/*.{ts,tsx,md}\"",
+		"build": "next build",
+		"start": "next start"
+	},
+	"dependencies": {
+		"@react-email/components": "0.0.6",
+		"react-email": "^1.9.5"
+	},
+	"devDependencies": {
+		"husky": "^8.0.3",
+		"lint-staged": "^15.1.0",
+		"prettier": "^3.1.0",
+		"prettier-plugin-tailwindcss": "^0.5.7"
+	}
+}
