@@ -1,14 +1,9 @@
 "use client"
-import { Zod, Sonner } from "@/dependencies/1_index"
 import { ContactFormSchema } from "./contactFormSchema"
-import { sendEmail } from "@/actions/sendEmail"
 import { z } from "zod"
-// types
 import { SubmitHandler } from "react-hook-form"
-// dependency unpacking
-const { zodResolver } = Zod
+import { toast } from "sonner"
 import { useForm } from "react-hook-form"
-const { toast } = Sonner
 
 type ContactFormInputs = z.infer<typeof ContactFormSchema>
 
@@ -61,7 +56,7 @@ export const ContactForm = () => {
 	return (
 		<form
 			onSubmit={handleSubmit(onSubmit)}
-			className="flex flex-col flex-1 gap-4 mx-auto text-gray-600 sm:w-1/2 border-zinc-300">
+			className="flex flex-col flex-1 gap-4 mx-auto sm:w-1/2 border-zinc-300">
 			<div>
 				<input
 					type="text"

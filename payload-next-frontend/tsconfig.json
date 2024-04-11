@@ -36,7 +36,7 @@
 			"@/adminPages/*": ["src/app/(pages)/(admin)/*"],
 			"@/context/*": ["src/app/context/*"],
 			"@/functions/*": ["src/app/functions/*"],
-			"@/emails/*": ["../react-email-server/emails/*"]
+			"@/emails/*": ["../payload-next-frontend/emails/*"]
 		}
 	}
 }
