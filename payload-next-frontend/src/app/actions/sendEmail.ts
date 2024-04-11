@@ -1,21 +1,9 @@
 "use server"
-import { FormEvent } from "react"
 import { z } from "zod"
-import { NextResponse } from "next/server"
-import { Resend } from "resend"
 import { toast } from "sonner"
 import { ContactFormSchema } from "@/publicPages/contact/contactFormSchema"
-import ContactFormEmail from "../../../../react-email-server/emails/contact-form-email"
 
 type ContactFormInputs = z.infer<typeof ContactFormSchema>
-
-function showAlert({ text, status }: { text: string; status: string }) {
-	if (status === "OK") {
-		toast.success(text)
-	} else {
-		toast.error(text)
-	}
-}
 
 export const sendEmail = async ({
 	data,
