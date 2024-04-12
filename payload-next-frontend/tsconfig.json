@@ -36,7 +36,15 @@
 			"@/adminPages/*": ["src/app/(pages)/(admin)/*"],
 			"@/context/*": ["src/app/context/*"],
 			"@/functions/*": ["src/app/functions/*"],
-			"@/emails/*": ["../payload-next-frontend/emails/*"]
+			"@/emails/*": ["../payload-next-frontend/emails/*"],
+			"@/sassAbstracts/*": ["src/styles/sass/sorted/abstracts/*"],
+			"@/sassBase/*": ["src/styles/sass/sorted/base/*"],
+			"@/sassComponents/*": ["src/styles/sass/sorted/components/*"],
+			"@/sassLayout/*": ["src/styles/sass/sorted/layout/*"],
+			"@/sassPages/*": ["src/styles/sass/sorted/pages/*"],
+			"@/sassThemes/*": ["src/styles/sass/sorted/themes/*"],
+			"@/sassUtilities/*": ["src/styles/sass/sorted/utilities/*"],
+			"@/sassVendors/*": ["src/styles/sass/sorted/vendors/*"]
 		}
 	}
 }

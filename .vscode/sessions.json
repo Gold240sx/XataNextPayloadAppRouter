@@ -24,6 +24,13 @@
                     ]
                 },
                 {
+                    "name": "Server (Emails)",
+                    "commands": [
+                        "cd payload-next-frontend",
+                        "npm run email"
+                    ]
+                },
+                {
                     "name": "Installs (Server)",
                     "commands": [
                         "cd payload-xata-backend"
@@ -42,21 +49,6 @@
                     "name": "Installs (Frontend)",
                     "commands": [
                         "cd payload-next-frontend"
-                    ]
-                }
-            ],
-            [
-                {
-                    "name": "React-Email (Node)",
-                    "commands": [
-                        "cd react-email-server",
-                        "npm run dev"
-                    ]
-                },
-                {
-                    "name": "Installs (React-Email)",
-                    "commands": [
-                        "cd react-emil-server"
                     ]
                 }
             ]
