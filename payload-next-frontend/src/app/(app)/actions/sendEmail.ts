@@ -1,7 +1,7 @@
 "use server"
 import { z } from "zod"
 import { toast } from "sonner"
-import { ContactFormSchema } from "@/publicPages/contact/contactFormSchema"
+import { ContactFormSchema } from "@/app/(app)/(pages)/(public)/contact/contactFormSchema"
 
 type ContactFormInputs = z.infer<typeof ContactFormSchema>
 

@@ -3,11 +3,11 @@ import type { Metadata } from "next"
 import { Inter, Roboto_Mono } from "next/font/google"
 // import { Analytics } from "@vercel/analytics/react"
 import Script from "next/script"
-import Head from "next/head"
+// import Head from "next/head"
 import localFont from "next/font/local"
 import { ThemeModeScript } from "flowbite-react"
-import "../styles/globals.css"
-import "../styles/sass/sass-index.scss"
+import "../../styles/globals.css"
+import "../../styles/sass/sass-index.scss"
 
 import { Toaster } from "@/components/shad-cn/sonner"
 
@@ -49,6 +49,21 @@ const roboto_mono = Roboto_Mono({
 // 	display: "swap",
 // })
 
+// <Head>
+// 			{process.env.NEXT_PUBLIC_UMAMI_SCRIPT_URL &&
+// 				process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && (
+// 					<Script
+// 						src={process.env.NEXT_PUBLIC_UMAMI_SCRIPT_URL}
+// 						data-website-id={
+// 							process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID
+// 						}
+// 						strategy="lazyOnload"
+// 					/>
+// 				)}
+// 			<script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+// 			<ThemeModeScript />
+// 		</Head>
+
 export const metadata: Metadata = {
 	title: "Xata 2024 Portfolio",
 	description: "Michael Martella's portfolio created in 2024",
@@ -64,20 +79,6 @@ export default function RootLayout({
 			lang="en"
 			//  "add ${roboto.className} with my local fonts"
 			className={`${inter.variable} ${roboto_mono.variable}`}>
-			<Head>
-				{process.env.NEXT_PUBLIC_UMAMI_SCRIPT_URL &&
-					process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && (
-						<Script
-							src={process.env.NEXT_PUBLIC_UMAMI_SCRIPT_URL}
-							data-website-id={
-								process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID
-							}
-							strategy="lazyOnload"
-						/>
-					)}
-				<script src="../path/to/flowbite/dist/flowbite.min.js"></script>
-				<ThemeModeScript />
-			</Head>
 			<body className={`${inter.className}`}>
 				<div className="neumorphism">
 					<h1 className="">Neumorphism</h1>
