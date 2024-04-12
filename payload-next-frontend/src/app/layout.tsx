@@ -5,9 +5,10 @@ import { Inter, Roboto_Mono } from "next/font/google"
 import Script from "next/script"
 import Head from "next/head"
 import localFont from "next/font/local"
-import test from "../styles/sass/test.module.scss"
 import { ThemeModeScript } from "flowbite-react"
 import "../styles/globals.css"
+import "../styles/sass/sass-index.scss"
+
 import { Toaster } from "@/components/shad-cn/sonner"
 
 const inter = Inter({
@@ -78,11 +79,9 @@ export default function RootLayout({
 				<ThemeModeScript />
 			</Head>
 			<body className={`${inter.className}`}>
-				<div className="content">
-					<p className="red">red text</p>
-					<h1 className={test.scssColor}>hello scss change</h1>
+				<div className="neumorphism">
+					<h1 className="">Neumorphism</h1>
 				</div>
-				<p className="red">not red text</p>
 				{children}
 				<Toaster />
 			</body>

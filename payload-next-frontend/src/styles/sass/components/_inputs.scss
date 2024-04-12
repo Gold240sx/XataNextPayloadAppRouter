@@ -1,3 +1,40 @@
+/* remove steppers from numeric inputs */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+	appearance: textfield;
+}
+
+/*  remove the autofill icon in safari from text inputs */
+input::-webkit-contacts-auto-fill-button {
+	visibility: hidden;
+	display: none !important;
+	pointer-events: none;
+	position: absolute;
+	right: 0;
+}
+
+input::-ms-clear {
+	display: none;
+}
+
+input::-ms-reveal {
+	display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+	/* select any elements that have an id that begins with #react-select-3-option-0 */
+	[id^="react-select-3-option-"] {
+		color: white !important;
+	}
+}
+
 input[type="file"] {
 	align-items: baseline;
 	color: inherit;
