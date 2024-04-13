@@ -16,6 +16,7 @@ This is a Next JS monorepo, _USING_ the App router. It utlizes, Xata DB, Next JS
 
 -   Next JS 14 (App Router) (Framework - Frontend)
 -   Xata DB (Database)
+-   Clerk (Authentication)
 -   Typescript (Language)
 -   Vercel (Deployment + Hosting)
 -   Payload CMS (Headless CMS)
