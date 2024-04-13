@@ -1,11 +1,11 @@
 import React from "react"
 import type { Metadata } from "next"
 import { Inter, Roboto_Mono } from "next/font/google"
-// import { Analytics } from "@vercel/analytics/react"
 import Script from "next/script"
-// import Head from "next/head"
 import localFont from "next/font/local"
 import { ThemeModeScript } from "flowbite-react"
+import { ClerkProvider } from "@clerk/nextjs"
+import Nav from "@/components/Nav"
 import "../../styles/globals.css"
 import "../../styles/sass/sass-index.scss"
 
@@ -75,18 +75,18 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html
-			lang="en"
-			//  "add ${roboto.className} with my local fonts"
-			className={`${inter.variable} ${roboto_mono.variable}`}>
-			<body className={`${inter.className}`}>
-				<div className="neumorphism">
-					<h1 className="">Neumorphism</h1>
-				</div>
-				{children}
-				<Toaster />
-			</body>
-			{/* <Analytics /> */}
-		</html>
+		<ClerkProvider>
+			<html
+				lang="en"
+				//  "add ${roboto.className} with my local fonts"
+				className={`${inter.variable} ${roboto_mono.variable}`}>
+				<body className={`${inter.className}`}>
+					<Nav />
+					{children}
+					<Toaster />
+				</body>
+				{/* <Analytics /> */}
+			</html>
+		</ClerkProvider>
 	)
 }

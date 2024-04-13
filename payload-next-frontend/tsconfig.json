@@ -1,109 +1,50 @@
 {
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ],
-  "compilerOptions": {
-    "baseUrl": ".",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "paths": {
-      "@/*": [
-        "src/*"
-      ],
-      "@/app/*": [
-        "src/app/*"
-      ],
-      "@/api/*": [
-        "src/app/(app)/api/*"
-      ],
-      "@/assets/*": [
-        "src/app/assets/*"
-      ],
-      "@/actions/*": [
-        "src/app/(app)/actions/*"
-      ],
-      "@/shadcn/*": [
-        "src/components/*"
-      ],
-      "@/utils/*": [
-        "src/utils/*"
-      ],
-      "@/lib/": [
-        "src/lib/"
-      ],
-      "@/dependencyIndex": [
-        "src/dependencies/1_index"
-      ],
-      "@/myComponents/*": [
-        "src/myComponents/*"
-      ],
-      "@/publicPages/*": [
-        "src/app/(app)/(pages)/(public)/*"
-      ],
-      "@/adminPages/*": [
-        "src/app/(app)/(pages)/(admin)/*"
-      ],
-      "@/context/*": [
-        "src/app/context/*"
-      ],
-      "@/functions/*": [
-        "src/app/(app)/functions/*"
-      ],
-      "@/emails/*": [
-        "../payload-next-frontend/emails/*"
-      ],
-      "@/sassAbstracts/*": [
-        "src/styles/sass/sorted/abstracts/*"
-      ],
-      "@/sassBase/*": [
-        "src/styles/sass/sorted/base/*"
-      ],
-      "@/sassComponents/*": [
-        "src/styles/sass/sorted/components/*"
-      ],
-      "@/sassLayout/*": [
-        "src/styles/sass/sorted/layout/*"
-      ],
-      "@/sassPages/*": [
-        "src/styles/sass/sorted/pages/*"
-      ],
-      "@/sassThemes/*": [
-        "src/styles/sass/sorted/themes/*"
-      ],
-      "@/sassUtilities/*": [
-        "src/styles/sass/sorted/utilities/*"
-      ],
-      "@/sassVendors/*": [
-        "src/styles/sass/sorted/vendors/*"
-      ],
-      "@payload-config": [
-        "./src/payload.config.ts"
-      ]
-    }
-  }
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+	"exclude": ["node_modules"],
+	"compilerOptions": {
+		"baseUrl": ".",
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"allowJs": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"noEmit": true,
+		"esModuleInterop": true,
+		"module": "esnext",
+		"moduleResolution": "bundler",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"jsx": "preserve",
+		"incremental": true,
+		"plugins": [
+			{
+				"name": "next"
+			}
+		],
+		"paths": {
+			"@/*": ["src/*"],
+			"@/app/*": ["src/app/*"],
+			"@/api/*": ["src/app/(app)/api/*"],
+			"@/assets/*": ["src/app/assets/*"],
+			"@/actions/*": ["src/app/(app)/actions/*"],
+			"@/shadcn/*": ["src/components/*"],
+			"@/utils/*": ["src/utils/*"],
+			"@/lib/": ["src/lib/"],
+			"@/dependencyIndex": ["src/dependencies/1_index"],
+			"@/myComponents/*": ["src/myComponents/*"],
+			"@/publicPages/*": ["src/app/(app)/(pages)/(public)/*"],
+			"@/dashboard/*": ["src/app/(app)/(pages)/(dashboard)/*"],
+			"@/context/*": ["src/app/context/*"],
+			"@/functions/*": ["src/app/(app)/functions/*"],
+			"@/emails/*": ["../payload-next-frontend/emails/*"],
+			"@/sassAbstracts/*": ["src/styles/sass/sorted/abstracts/*"],
+			"@/sassBase/*": ["src/styles/sass/sorted/base/*"],
+			"@/sassComponents/*": ["src/styles/sass/sorted/components/*"],
+			"@/sassLayout/*": ["src/styles/sass/sorted/layout/*"],
+			"@/sassPages/*": ["src/styles/sass/sorted/pages/*"],
+			"@/sassThemes/*": ["src/styles/sass/sorted/themes/*"],
+			"@/sassUtilities/*": ["src/styles/sass/sorted/utilities/*"],
+			"@/sassVendors/*": ["src/styles/sass/sorted/vendors/*"],
+			"@payload-config": ["./src/payload.config.ts"]
+		}
+	}
 }

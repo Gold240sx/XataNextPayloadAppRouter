@@ -3,8 +3,10 @@ import React, { ReactNode } from "react"
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
 	return (
 		<div>
-			<h1>Dashboard Layout </h1>
-			{children}
+			<div className="flex justify-center items-center p-24">
+				<h1>Dashboard Layout </h1>
+				{children}
+			</div>
 		</div>
 	)
 }
