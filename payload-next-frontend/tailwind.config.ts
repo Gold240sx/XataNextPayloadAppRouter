@@ -94,7 +94,7 @@ const config = withUt({
 	},
 	extract: fluidExtractor(),
 	plugins: [
-		require("flowbite/plugin"),
+		// require("flowbite/plugin"),
 		require("flowbite/plugin")({
 			charts: true,
 		}),

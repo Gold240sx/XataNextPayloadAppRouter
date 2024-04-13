@@ -10,6 +10,7 @@
 		"email": "email dev --port 3600"
 	},
 	"dependencies": {
+		"@clerk/nextjs": "^4.29.12",
 		"@dnd-kit/core": "^6.1.0",
 		"@gsap/react": "^2.1.0",
 		"@headlessui/react": "^1.7.17",
