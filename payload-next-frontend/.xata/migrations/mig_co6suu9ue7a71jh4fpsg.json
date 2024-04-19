@@ -1,0 +1,83 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_co6suu9ue7a71jh4fpsg",
+    "operations": [
+      {
+        "create_table": {
+          "name": "blog-posts",
+          "columns": [
+            {
+              "name": "title",
+              "type": "text",
+              "comment": "{\"xata.type\":\"string\"}",
+              "nullable": true
+            },
+            {
+              "name": "slug",
+              "type": "text",
+              "comment": "{\"xata.type\":\"string\"}",
+              "nullable": true
+            },
+            {
+              "name": "description",
+              "type": "text",
+              "comment": "{\"xata.type\":\"text\"}",
+              "nullable": true
+            },
+            {
+              "name": "pubDate",
+              "type": "timestamptz",
+              "nullable": true
+            },
+            {
+              "name": "xata_version",
+              "type": "integer",
+              "default": "0",
+              "nullable": false
+            },
+            {
+              "name": "xata_createdat",
+              "type": "timestamptz",
+              "default": "now()",
+              "nullable": false
+            },
+            {
+              "name": "xata_updatedat",
+              "type": "timestamptz",
+              "default": "now()",
+              "nullable": false
+            },
+            {
+              "name": "xata_id",
+              "type": "text",
+              "check": {
+                "name": "blog-posts_xata_id_length_xata_id",
+                "constraint": "length(\"xata_id\") < 256"
+              },
+              "unique": true,
+              "default": "'rec_' || xata_private.xid()",
+              "nullable": false
+            }
+          ]
+        }
+      },
+      {
+        "sql": {
+          "up": "ALTER TABLE \"blog-posts\" REPLICA IDENTITY FULL",
+          "onComplete": true
+        }
+      },
+      {
+        "sql": {
+          "up": "CREATE TRIGGER xata_maintain_metadata_trigger_pgroll\n  BEFORE INSERT OR UPDATE\n  ON \"blog-posts\"\n  FOR EACH ROW\n  EXECUTE FUNCTION xata_private.maintain_metadata_trigger_pgroll()",
+          "onComplete": true
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_co6suu9ue7a71jh4fpsg",
+  "parent": "mig_co6surpue7a71jh4fprg",
+  "startedAt": "2024-04-03T21:51:54.400822Z"
+}

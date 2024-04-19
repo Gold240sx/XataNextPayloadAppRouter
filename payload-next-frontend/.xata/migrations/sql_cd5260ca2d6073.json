@@ -1,0 +1,17 @@
+{
+  "done": true,
+  "migration": {
+    "name": "sql_cd5260ca2d6073",
+    "operations": [
+      {
+        "sql": {
+          "up": "CREATE TABLE IF NOT EXISTS payload_preferences_rels (id serial PRIMARY KEY NOT NULL, \"order\" int, parent_id int NOT NULL, path varchar NOT NULL, users_id int)"
+        }
+      }
+    ]
+  },
+  "migrationType": "inferred",
+  "name": "sql_cd5260ca2d6073",
+  "parent": "sql_6bc65a54ea087a",
+  "startedAt": "2024-04-04T18:12:33.450473Z"
+}

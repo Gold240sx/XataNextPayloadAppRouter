@@ -1,12 +1,17 @@
 import React, { ReactNode } from "react"
+import { auth } from "@clerk/nextjs"
+import { redirect } from "next/navigation"
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
+	const { userId, sessionClaims, orgRole, has } = auth()
+
+	if (!userId) {
+		redirect("/sign-in")
+	}
+
 	return (
 		<div>
-			<div className="flex justify-center items-center p-24">
-				<h1>Dashboard Layout </h1>
-				{children}
-			</div>
+			<main className="flex justify-center items-center">{children}</main>
 		</div>
 	)
 }

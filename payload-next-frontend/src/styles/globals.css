@@ -3,6 +3,7 @@
 @import "tailwindcss/utilities";
 
 @layer base {
+	/* --bg-background:   Set up the variables here or there will be weird transparency issues all over the place */
 	body {
 		@apply bg-background text-primary;
 	}

@@ -1,0 +1,17 @@
+{
+  "done": true,
+  "migration": {
+    "name": "sql_292e626c04be49",
+    "operations": [
+      {
+        "sql": {
+          "up": "CREATE TABLE IF NOT EXISTS payload_migrations (id serial PRIMARY KEY NOT NULL, name varchar, batch numeric, updated_at timestamp (3) with time zone DEFAULT now() NOT NULL, created_at timestamp (3) with time zone DEFAULT now() NOT NULL)"
+        }
+      }
+    ]
+  },
+  "migrationType": "inferred",
+  "name": "sql_292e626c04be49",
+  "parent": "sql_cd5260ca2d6073",
+  "startedAt": "2024-04-04T18:12:33.595559Z"
+}

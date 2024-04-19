@@ -1,0 +1,18 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_co6t74epe2mbada2v8ug",
+    "operations": [
+      {
+        "rename_table": {
+          "to": "Posts",
+          "from": "blog-posts"
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_co6t74epe2mbada2v8ug",
+  "parent": "mig_co6suu9ue7a71jh4fpsg",
+  "startedAt": "2024-04-03T22:09:22.766632Z"
+}
