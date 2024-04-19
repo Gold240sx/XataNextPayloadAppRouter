@@ -1,10 +1,25 @@
 "use client"
 import React from "react"
 import Link from "next/link"
-import { UserButton, useUser } from "@clerk/nextjs"
+import { UserButton, useUser, useAuth } from "@clerk/nextjs"
+import NavbarAdminBlock from "./NavbarAdminBlock"
+import { Button } from "@/shadcn/shad-cn/button"
 
 const Nav = () => {
 	const { user, isLoaded } = useUser()
+
+	const userDetails = {
+		userId: user?.emailAddresses[0].id,
+		fullName: user?.fullName,
+		email: user?.primaryEmailAddress?.emailAddress,
+		// isAdmin: has && has({ permission: "2024-Portfolio:admin:manage" }),
+		isAdmin: user?.organizationMemberships.filter(
+			(org) =>
+				org.organization.name === "2024-Portfolio" ||
+				org.role === "org:admin"
+		),
+		imageUrl: user?.imageUrl,
+	}
 
 	return (
 		<header>
@@ -17,19 +32,24 @@ const Nav = () => {
 					</a>
 				</div>
 				{isLoaded && !user && (
-					<>
-						<Link href="sign-in">Sign In</Link>
-						<Link href="sign-up">Sign In</Link>
-					</>
+					<div className="flex gap-2">
+						<Button className="border border-zinc-200 rounded hover:bg-zinc-50 hover:border-zinc-300">
+							<Link href="sign-up">Sign Up</Link>
+						</Button>
+						<Button className="border border-zinc-200 rounded hover:bg-zinc-50 hover:border-zinc-300">
+							<Link href="sign-in">Sign In</Link>
+						</Button>
+					</div>
 				)}
 				{isLoaded && user && (
 					<>
 						<div className="mx-4 flex gap-2">
 							<Link href="/dashboard">Dashboard</Link>
 						</div>
-						<div>
+						<div className="z-[12]">
 							<UserButton afterSignOutUrl="/" />
 						</div>
+						<NavbarAdminBlock userDetails={userDetails} />
 					</>
 				)}
 			</nav>

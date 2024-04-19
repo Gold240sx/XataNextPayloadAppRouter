@@ -1,0 +1,17 @@
+{
+  "done": true,
+  "migration": {
+    "name": "sql_c3db88f2edd915",
+    "operations": [
+      {
+        "sql": {
+          "up": "CREATE INDEX IF NOT EXISTS payload_migrations_created_at_idx ON payload_migrations USING btree (created_at)"
+        }
+      }
+    ]
+  },
+  "migrationType": "inferred",
+  "name": "sql_c3db88f2edd915",
+  "parent": "sql_2fa7373af4167a",
+  "startedAt": "2024-04-04T18:12:34.198588Z"
+}

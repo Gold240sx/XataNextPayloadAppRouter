@@ -1,0 +1,17 @@
+{
+  "done": true,
+  "migration": {
+    "name": "sql_efc7487cd0b456",
+    "operations": [
+      {
+        "sql": {
+          "up": "CREATE INDEX IF NOT EXISTS payload_preferences_rels_order_idx ON payload_preferences_rels USING btree (\"order\")"
+        }
+      }
+    ]
+  },
+  "migrationType": "inferred",
+  "name": "sql_efc7487cd0b456",
+  "parent": "sql_9155dbf51506bb",
+  "startedAt": "2024-04-04T18:12:33.976041Z"
+}

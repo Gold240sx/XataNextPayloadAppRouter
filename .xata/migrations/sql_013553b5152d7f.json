@@ -1,0 +1,17 @@
+{
+  "done": true,
+  "migration": {
+    "name": "sql_013553b5152d7f",
+    "operations": [
+      {
+        "sql": {
+          "up": "CREATE INDEX IF NOT EXISTS users_created_at_idx ON users USING btree (created_at)"
+        }
+      }
+    ]
+  },
+  "migrationType": "inferred",
+  "name": "sql_013553b5152d7f",
+  "parent": "sql_292e626c04be49",
+  "startedAt": "2024-04-04T18:12:33.721031Z"
+}

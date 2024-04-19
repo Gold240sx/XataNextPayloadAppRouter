@@ -1,0 +1,17 @@
+{
+  "done": true,
+  "migration": {
+    "name": "sql_3ee692beeb30e1",
+    "operations": [
+      {
+        "sql": {
+          "up": "CREATE TABLE IF NOT EXISTS users (id serial PRIMARY KEY NOT NULL, updated_at timestamp (3) with time zone DEFAULT now() NOT NULL, created_at timestamp (3) with time zone DEFAULT now() NOT NULL, email varchar NOT NULL, reset_password_token varchar, reset_password_expiration timestamp (3) with time zone, salt varchar, hash varchar, login_attempts numeric, lock_until timestamp (3) with time zone)"
+        }
+      }
+    ]
+  },
+  "migrationType": "inferred",
+  "name": "sql_3ee692beeb30e1",
+  "parent": "mig_co7epihue7a71jh4g71g",
+  "startedAt": "2024-04-04T18:12:33.098319Z"
+}

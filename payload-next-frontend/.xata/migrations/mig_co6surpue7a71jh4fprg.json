@@ -1,0 +1,17 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_co6surpue7a71jh4fprg",
+    "operations": [
+      {
+        "drop_table": {
+          "name": "tag"
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_co6surpue7a71jh4fprg",
+  "parent": "mig_co6suq6pe2mbada2v8sg",
+  "startedAt": "2024-04-03T21:51:43.351374Z"
+}

@@ -1,0 +1,17 @@
+{
+  "done": true,
+  "migration": {
+    "name": "sql_4bc4c2177207cb",
+    "operations": [
+      {
+        "sql": {
+          "up": "CREATE UNIQUE INDEX IF NOT EXISTS users_email_idx ON users USING btree (email)"
+        }
+      }
+    ]
+  },
+  "migrationType": "inferred",
+  "name": "sql_4bc4c2177207cb",
+  "parent": "sql_013553b5152d7f",
+  "startedAt": "2024-04-04T18:12:33.782189Z"
+}
