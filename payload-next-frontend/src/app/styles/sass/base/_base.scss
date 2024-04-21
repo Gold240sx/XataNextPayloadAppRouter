@@ -31,6 +31,15 @@ body {
 	// background-color: aquamarine;
 }
 
+.always-scroll-height {
+	height: fit-content;
+	height: -moz-fit-content;
+	height: -webkit-fit-content;
+	overscroll-behavior: none !important;
+	overscroll-behavior-block: none !important;
+	// max-height: calc(max-content - 1px) !important;
+}
+
 body.gradient {
 	background: linear-gradient(
 			to bottom,

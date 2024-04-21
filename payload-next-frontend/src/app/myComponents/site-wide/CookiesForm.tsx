@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect } from "react"
+import React, { useEffect, Dispatch, SetStateAction } from "react"
 import Link from "next/link"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
@@ -18,38 +18,53 @@ import { Label } from "@/components/shad-cn/label"
 import { Button } from "@/components/shad-cn/button"
 import { Switch } from "@/components/shad-cn/switch"
 import { Input } from "@/components/shad-cn/input"
+import { VoidFunction } from "@/types/functionTypes"
 
 const formSchema = z.object({
 	neccessaryCookies: z.boolean(),
 	functionalCookies: z.boolean(),
 	analyticsCookies: z.boolean(),
+	cookiesSaved: z.boolean(),
 })
 
+type setStateFormAction = Dispatch<SetStateAction<{ neccessaryCookies: boolean; functionalCookies: boolean; analyticsCookies: boolean; cookiesSaved: boolean }>>
 type formSchemaType = z.infer<typeof formSchema>
 
-const CookiesForm = () => {
+const CookiesForm = ({
+	cookies, 
+	setCookies,
+	showPopup, 
+	setShowPopup
+	}:{cookies: formSchemaType, 
+		setCookies: setStateFormAction, 
+		showPopup: boolean,
+		 setShowPopup: Dispatch<SetStateAction<boolean>>
+	}) => {
 	const form = useForm<formSchemaType>({
+		defaultValues: cookies,
 		resolver: zodResolver(formSchema),
 	})
 
-	const onSubmit = async (data: formSchemaType) => {
-		console.log(data)
+	const onSubmit = async (data:formSchemaType) => {
+		setCookies({...data, cookiesSaved:true})
+		setShowPopup(false)
 	}
 
 	return (
+		<>
 		<Form {...form}>
-			<form
+			 <form
 				onSubmit={form.handleSubmit(onSubmit)}
-				className="space-y-2 w-full ease-in-out-duration-300 transition-all">
-				<div className="flex items-center my-2">
-					{/* <FormField
+				className=" max-w-[400px] px-4 ease-in-out-duration-300 transition-all w-full">
+				<div className="flex items-center my-2 w-full flex-col gap-2 pt-6">
+					<FormField
 						control={form.control}
 						name="neccessaryCookies"
 						render={({ field }) => (
-							<FormItem className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm">
-								<div className="space-y-0.5 flex w-fit">
+							<FormItem className="flex flex-row items-center w-full justify-between rounded-lg bg-zinc-850 p-3 shadow-sm gap-6">
+								<div className="space-y-0.5 flex w-fit items-center">
 									<FormLabel className="whitespace-nowrap">
-										Marketing emails
+										Necessary Cookies
 									</FormLabel>
 									<FormDescription>
 										<button
@@ -57,15 +72,16 @@ const CookiesForm = () => {
 											className="text-xl mx-1">
 											<Link
 												scroll={true}
-												href="/cookie-policy/necessary"
+												href="/cookie-policy/neccessary"
 												target="_blank">
-												<BiInfoCircle />
+												<BiInfoCircle className="my-auto text-center align-center flex text-2xl text-zinc-600 hover:text-white translate-y-[2px]" />
 											</Link>
 										</button>
 									</FormDescription>
 								</div>
 								<FormControl>
 									<Switch
+										className="space-y-0 data-[state=checked]:bg-lime-600 data-[state=unchecked]:bg-zinc-1000 ease-in-out duration-300"
 										checked={field.value}
 										onCheckedChange={field.onChange}
 										disabled
@@ -74,16 +90,99 @@ const CookiesForm = () => {
 								</FormControl>
 							</FormItem>
 						)}
-					/> */}
-					<Switch
-						checked={true}
-						onCheckedChange={() => {}}
-						disabled
-						aria-readonly
 					/>
+					<FormField
+						control={form.control}
+						name="functionalCookies"
+						render={({ field }) => (
+							<FormItem className="flex flex-row items-center w-full justify-between rounded-lg bg-zinc-850 p-3 shadow-sm gap-6">
+								<div className="space-y-0.5 flex w-fit items-center">
+									<FormLabel className="whitespace-nowrap">
+										Functional Cookies
+									</FormLabel>
+									<FormDescription>
+										<button
+											type="button"
+											className="text-xl mx-1">
+											<Link
+												scroll={true}
+												href="/cookie-policy/functional"
+												target="_blank">
+												<BiInfoCircle className="my-auto text-center align-center flex text-2xl text-zinc-600 hover:text-white translate-y-[2px]" />
+											</Link>
+										</button>
+									</FormDescription>
+								</div>
+								<FormControl>
+									<Switch
+									className="space-y-0 data-[state=checked]:bg-lime-600 data-[state=unchecked]:bg-zinc-1000 ease-in-out duration-300"
+										checked={field.value}
+										onCheckedChange={field.onChange}
+										aria-readonly
+									/>
+								</FormControl>
+							</FormItem>
+							
+						)}
+					/>
+					<FormField
+						control={form.control}
+						name="analyticsCookies"
+						render={({ field }) => (
+							<FormItem className="flex flex-row items-center w-full justify-between rounded-lg bg-zinc-850 p-3 shadow-sm gap-6">
+								<div className="space-y-0.5 flex w-fit items-center">
+									<FormLabel className="whitespace-nowrap">
+										Functional Cookies
+									</FormLabel>
+									<FormDescription>
+										<button
+											type="button"
+											className="text-xl mx-1">
+											<Link
+												scroll={true}
+												href="/cookie-policy/analytics"
+												target="_blank">
+												<BiInfoCircle className="my-auto text-center align-center flex text-2xl text-zinc-600 hover:text-white translate-y-[2px]" />
+											</Link>
+										</button>
+									</FormDescription>
+								</div>
+								<FormControl>
+									<Switch
+									className="space-y-0 data-[state=checked]:bg-lime-600 data-[state=unchecked]:bg-zinc-1000 ease-in-out duration-300"
+										checked={field.value}
+										onCheckedChange={field.onChange}
+										aria-readonly
+									/>
+								</FormControl>
+							</FormItem>
+							
+						)}
+					/>
+					<FormField
+						control={form.control}
+						name="cookiesSaved"
+						render={({ field }) => (
+							<FormItem className="hidden translate-x-[999]">
+								<FormControl>
+									<Switch
+									className="space-y-0 data-[state=checked]:bg-lime-600 data-[state=unchecked]:bg-zinc-1000 ease-in-out duration-300"
+										checked={true}
+										onCheckedChange={field.onChange}
+										disabled
+										aria-readonly
+									/>
+								</FormControl>
+							</FormItem>
+							
+						)}
+					/>
+					  <Button type="submit" className="rounded-xl bg-black hover:bg-zinc-950 w-full my-1">Submit</Button>
 				</div>
-			</form>
+			</form> 
 		</Form>
+
+		</>
 	)
 }
 

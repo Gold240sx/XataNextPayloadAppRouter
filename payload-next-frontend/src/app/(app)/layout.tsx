@@ -6,12 +6,14 @@ import Script from "next/script"
 import localFont from "next/font/local"
 import { ThemeModeScript } from "flowbite-react"
 import { ClerkProvider } from "@clerk/nextjs"
+import { LocalStorageProvider } from "@/context/localStorageContext"
 import CookiesPopup from "../myComponents/site-wide/CookiesPopup"
 import Nav from "@/components/Nav"
 import "../styles/globals.css"
 import "../styles/sass/sass-index.scss"
 
 import { Toaster } from "@/components/shad-cn/sonner"
+import CookieJarView from "../myComponents/site-wide/CookieJarView"
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -24,6 +26,46 @@ const roboto_mono = Roboto_Mono({
 	display: "swap",
 	variable: "--font-roboto-mono",
 })
+
+export const metadata: Metadata = {
+	title: "Xata 2024 Portfolio",
+	description: "Michael Martella's portfolio created in 2024",
+}
+export const viewport: Viewport = {
+	// colorScheme: "dark",
+	colorScheme: "normal",
+	initialScale: 1,
+	maximumScale: 1,
+	viewportFit: "cover",
+	userScalable: false,
+}
+
+export default function RootLayout({
+	children,
+}: Readonly<{
+	children: React.ReactNode
+}>) {
+	return (
+		<ClerkProvider>
+			<html
+				lang="en"
+				//  "add ${roboto.className} with my local fonts"
+				className={`${inter.variable} ${roboto_mono.variable}`}>
+				<LocalStorageProvider>
+					<body
+						className={`${inter.className} flex flex-col min-h-screen relative cookiesAlert--active`}>
+						<Nav />
+						{children}
+						<Toaster />
+						<CookiesPopup />
+						<CookieJarView />
+					</body>
+				</LocalStorageProvider>
+				{/* <Analytics /> */}
+			</html>
+		</ClerkProvider>
+	)
+}
 
 // const roboto = localFont({
 // 	src: [
@@ -65,40 +107,3 @@ const roboto_mono = Roboto_Mono({
 // 			<script src="../path/to/flowbite/dist/flowbite.min.js"></script>
 // 			<ThemeModeScript />
 // 		</Head>
-
-export const metadata: Metadata = {
-	title: "Xata 2024 Portfolio",
-	description: "Michael Martella's portfolio created in 2024",
-}
-export const viewport: Viewport = {
-	// colorScheme: "dark",
-	colorScheme: "normal",
-	initialScale: 1,
-	maximumScale: 1,
-	viewportFit: "cover",
-	userScalable: false,
-}
-
-export default function RootLayout({
-	children,
-}: Readonly<{
-	children: React.ReactNode
-}>) {
-	return (
-		<ClerkProvider>
-			<html
-				lang="en"
-				//  "add ${roboto.className} with my local fonts"
-				className={`${inter.variable} ${roboto_mono.variable}`}>
-				<body
-					className={`${inter.className} flex flex-col min-h-screen relative`}>
-					<Nav />
-					{children}
-					<Toaster />
-					<CookiesPopup />
-				</body>
-				{/* <Analytics /> */}
-			</html>
-		</ClerkProvider>
-	)
-}

@@ -6,6 +6,8 @@ import { useGSAP } from "@gsap/react"
 import { ScrollToPlugin } from "gsap/all"
 import { useRouter } from "next/navigation"
 import { SiteParams } from "@/context/library"
+import { useUser } from "@clerk/nextjs"
+import { toast } from "sonner"
 
 gsap.registerPlugin(ScrollToPlugin)
 gsap.registerPlugin(useGSAP)
@@ -14,10 +16,14 @@ const CookiePolicy = ({ params }: { params: paramsType }) => {
 	const pathname = params.slug[0].replace(/\s/g, "").toLowerCase()
 	const linkList = ["necessary", "functional", "analytics"]
 	const router = useRouter()
+	const { user } = useUser()
 
 	useGSAP(() => {
 		if (pathname && linkList.includes(pathname)) {
-			gsap.to(window, {
+			const pathnameDIvExists = !!document.getElementById(pathname)
+			if (pathnameDIvExists) {
+				console.log("pathname exists")
+				gsap.to(window, {
 				duration: 1,
 				delay: 0.5,
 				scrollTo: {
@@ -25,7 +31,20 @@ const CookiePolicy = ({ params }: { params: paramsType }) => {
 					offsetY: 50,
 				},
 			})
+			} else {
+				console.log("user", user)
+				console.log(SiteParams.adminContext.adminEmail)
+				if (user?.emailAddresses[0].id === SiteParams.adminContext.adminEmail)
+					{
+						toast.error(`No div with id ${pathname} found`)
+					}
+					// setTimeout(() => {
+					// 	console.log("setTimeout router pushing")
+					// 	router.push(`${SiteParams.cookies.cookiePolicyUrl}`)
+					// }, 5000)
+			}
 		} else {
+			console.log("router pushing")
 			router.push(`${SiteParams.cookies.cookiePolicyUrl}`)
 		}
 	})
