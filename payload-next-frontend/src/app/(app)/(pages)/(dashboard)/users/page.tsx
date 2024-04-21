@@ -42,8 +42,6 @@ const UsersPage = async () => {
 		}
 	})
 
-	constole.log()
-
 	return (
 		<div>
 			{/* <UsersTable /> */}

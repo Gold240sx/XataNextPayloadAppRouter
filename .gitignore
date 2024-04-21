@@ -39,10 +39,12 @@ media
 .env
 .env.local
 .env/*
+.env.example
 .npmrc
 
 # vercel
 .vercel
+_examples
 
 # payload-next-frontend/build
 # payload-next-frontend/dist

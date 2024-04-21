@@ -20,15 +20,15 @@ import {
 	TableHead,
 	TableHeader,
 	TableRow,
-} from "@/components/shad-cn/table"
-import { Input } from "@/components/shad-cn/input"
+} from "@/app/components/shad-cn/table"
+import { Input } from "@/app/components/shad-cn/input"
 
 import {
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuTrigger,
 	DropdownMenuCheckboxItem,
-} from "@/components/shad-cn/dropdown-menu"
+} from "@/app/components/shad-cn/dropdown-menu"
 
 // import {
 // 	ChevronLeftIcon,
@@ -45,7 +45,7 @@ import {
 // 	SelectValue,
 // } from "@/components/shad-cn/select"
 
-import { Button } from "@/components/shad-cn/button"
+import { Button } from "@/app/components/shad-cn/button"
 import { useState } from "react"
 
 interface DataTableProps<TData, TValue> {
