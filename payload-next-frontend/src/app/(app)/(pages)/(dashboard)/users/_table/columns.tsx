@@ -2,7 +2,7 @@
 import React from "react"
 import { ColumnDef } from "@tanstack/react-table"
 import { MoreHorizontal, ArrowUpDown } from "lucide-react"
-import { Button } from "@/components/shad-cn/button"
+import { Button } from "@/app/components/shad-cn/button"
 import { toast } from "sonner"
 import {
 	DropdownMenu,
@@ -11,7 +11,7 @@ import {
 	DropdownMenuLabel,
 	DropdownMenuSeparator,
 	DropdownMenuTrigger,
-} from "@/components/shad-cn/dropdown-menu"
+} from "@/app/components/shad-cn/dropdown-menu"
 import Link from "next/link"
 
 export type User = {

@@ -37,6 +37,8 @@ const config = withUt({
 		screens: defaultThemeScreensInRems,
 		extend: {
 			colors: {
+				"zinc-950": "#131315",
+				"zinc-1000": "#070708",
 				border: "hsl(var(--border))",
 				input: "hsl(var(--input))",
 				ring: "hsl(var(--ring))",
@@ -85,16 +87,25 @@ const config = withUt({
 					from: { height: "var(--radix-accordion-content-height)" },
 					to: { height: "0" },
 				},
+				scrollingTextLeft: {
+					"0%": {
+						transform: "translate3d(50%, 0, 0)",
+					},
+					"100%": {
+						transform: "translate3d(-100%, 0, 0)",
+					},
+				},
 			},
 			animation: {
 				"accordion-down": "accordion-down 0.2s ease-out",
 				"accordion-up": "accordion-up 0.2s ease-out",
+				scrollingTextLeft: "scrollingTextLeft 25s linear infinite",
 			},
 		},
 	},
 	extract: fluidExtractor(),
 	plugins: [
-		// require("flowbite/plugin"),
+		"prettier-plugin-tailwindcss",
 		require("flowbite/plugin")({
 			charts: true,
 		}),

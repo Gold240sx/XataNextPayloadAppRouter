@@ -1,13 +1,15 @@
 import React from "react"
 import type { Metadata } from "next"
+import type { Viewport } from "next"
 import { Inter, Roboto_Mono } from "next/font/google"
 import Script from "next/script"
 import localFont from "next/font/local"
 import { ThemeModeScript } from "flowbite-react"
 import { ClerkProvider } from "@clerk/nextjs"
+import CookiesPopup from "../myComponents/site-wide/CookiesPopup"
 import Nav from "@/components/Nav"
-import "../../styles/globals.css"
-import "../../styles/sass/sass-index.scss"
+import "../styles/globals.css"
+import "../styles/sass/sass-index.scss"
 
 import { Toaster } from "@/components/shad-cn/sonner"
 
@@ -68,6 +70,14 @@ export const metadata: Metadata = {
 	title: "Xata 2024 Portfolio",
 	description: "Michael Martella's portfolio created in 2024",
 }
+export const viewport: Viewport = {
+	// colorScheme: "dark",
+	colorScheme: "normal",
+	initialScale: 1,
+	maximumScale: 1,
+	viewportFit: "cover",
+	userScalable: false,
+}
 
 export default function RootLayout({
 	children,
@@ -80,10 +90,12 @@ export default function RootLayout({
 				lang="en"
 				//  "add ${roboto.className} with my local fonts"
 				className={`${inter.variable} ${roboto_mono.variable}`}>
-				<body className={`${inter.className}`}>
+				<body
+					className={`${inter.className} flex flex-col min-h-screen relative`}>
 					<Nav />
 					{children}
 					<Toaster />
+					<CookiesPopup />
 				</body>
 				{/* <Analytics /> */}
 			</html>
