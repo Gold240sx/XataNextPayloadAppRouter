@@ -4,6 +4,7 @@ import Link from "next/link"
 import { UserButton, useUser, useAuth } from "@clerk/nextjs"
 import NavbarAdminBlock from "./NavbarAdminBlock"
 import { Button } from "@/components/shad-cn/button"
+import { SiteParams } from "../context/library"
 
 const Nav = () => {
 	const { user, isLoaded } = useUser()
@@ -15,13 +16,12 @@ const Nav = () => {
 		// isAdmin: has && has({ permission: "2024-Portfolio:admin:manage" }),
 		isAdmin: user?.organizationMemberships.filter(
 			(org) =>
-				org.organization.name === "2024-Portfolio" ||
-				org.role === "org:admin"
+				org.organization.name ===
+					SiteParams.adminContext.clerkAdminOrg ||
+				org.role === SiteParams.adminContext.clerkAdminRole
 		),
 		imageUrl: user?.imageUrl,
 	}
-
-	useEffect(() => {}, [user])
 
 	return (
 		<header>

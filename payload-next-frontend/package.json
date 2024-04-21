@@ -129,8 +129,6 @@
 		"fluid-tailwind": "^0.1.6",
 		"postcss": "^8",
 		"postcss-import": "^16.1.0",
-		"prettier": "^3.2.5",
-		"prettier-plugin-tailwindcss": "^0.5.14",
 		"sass": "^1.74.1",
 		"tailwindcss": "^3.3.0",
 		"tailwindcss-fluid": "^0.2.0",

@@ -37,6 +37,7 @@ const config = withUt({
 		screens: defaultThemeScreensInRems,
 		extend: {
 			colors: {
+				"zinc-850": "#1D1D1F",
 				"zinc-950": "#131315",
 				"zinc-1000": "#070708",
 				border: "hsl(var(--border))",

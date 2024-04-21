@@ -2,6 +2,12 @@
 
 const SiteParams = {
 	companyName: "",
+	devMode: true,
+	adminContext: {
+		adminEmail: "240designworks@gmail.com",
+		clerkAdminRole: "org:admin",
+		clerkAdminOrg: "2024-Portfolio",
+	},
 	navigation: [
 		{ name: "About", href: "/about" },
 		// { name: "Portfolio", href: "/portfolio" },
