@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation"
 import { SiteParams } from "@/context/library"
 import { useUser } from "@clerk/nextjs"
 import { toast } from "sonner"
+import Breadcrumbs from "@/myComponents/site-wide/breadcrumbs/Breadcrumbs"
 
 gsap.registerPlugin(ScrollToPlugin)
 gsap.registerPlugin(useGSAP)
@@ -50,6 +51,16 @@ const CookiePolicy = ({ params }: { params: paramsType }) => {
 	})
 
 	return (
+		<div>
+			<Breadcrumbs
+				pages={[
+					{
+						name: "Cookie Policy",
+						href: "/cookie-policy",
+						current: true,
+					},
+				]}
+			/>
 		<div className="max-w-[700px] mx-auto mt-16 flex justify-center flex-col gap-4">
 			<h1>Cookie Policy</h1>
 			<p>
@@ -130,6 +141,7 @@ const CookiePolicy = ({ params }: { params: paramsType }) => {
 				blocking some types of cookies may impact your experience of the
 				site and the services we are able to offer.
 			</p>
+		</div>
 		</div>
 	)
 }

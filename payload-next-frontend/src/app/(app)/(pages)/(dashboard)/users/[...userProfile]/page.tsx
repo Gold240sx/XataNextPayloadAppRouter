@@ -1,5 +1,6 @@
 import { UserProfile, auth } from "@clerk/nextjs"
 import { redirect } from "next/navigation"
+import Breadcrumbs from "@/myComponents/site-wide/breadcrumbs/Breadcrumbs"
 import { dark } from "@clerk/themes"
 
 type UserProfilePageParams = {
@@ -20,7 +21,26 @@ const UserProfilePage = (params: UserProfilePageParams) => {
 
 	return (
 		<div>
-			<UserProfile />
+			<Breadcrumbs
+				pages={[
+					{
+						name: "Users",
+						href: "/users",
+						current: false,
+					},
+					{
+						name:
+							paramString.charAt(0).toUpperCase() +
+							paramString.slice(1),
+						href: `/users/${paramString}`,
+						// may want to configure to show the user's name
+						current: true,
+					},
+				]}
+			/>
+			<div className="max-w-[700px] mx-auto mt-16 flex justify-center flex-col gap-4">
+				<UserProfile />
+			</div>
 		</div>
 	)
 }
