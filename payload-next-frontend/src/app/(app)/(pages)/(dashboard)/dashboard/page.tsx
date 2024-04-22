@@ -4,9 +4,11 @@ import { redirect } from "next/navigation"
 import { revalidatePath } from "next/cache"
 import { auth } from "@clerk/nextjs"
 import { getXataClient } from "@/xata"
+import Breadcrumbs from "@/myComponents/site-wide/breadcrumbs/Breadcrumbs"
 import { z } from "zod"
 
 import FolderForm from "./FolderForm"
+import { paramsType } from "@/types/nextTypes"
 
 const schema = z.object({
 	name: z.string().min(3, "Folder Name must be greater than 3 characters"),
@@ -34,12 +36,23 @@ const Dashboard = async () => {
 
 	return (
 		<div>
-			<h1>Dashboard Page</h1>
-			<FolderForm handleCreateFolder={createFolder} />
-			<div className="mt-10">
-				{folders.map((folder) => (
-					<p key={folder.id}>{folder.name}</p>
-				))}
+			<Breadcrumbs
+				pages={[
+					{
+						name: "Dashboard",
+						href: "/dashboard",
+						current: true,
+					},
+				]}
+			/>
+			<div className="max-w-[700px] mx-auto mt-16 flex justify-center flex-col gap-4">
+				<h1>Dashboard Page</h1>
+				<FolderForm handleCreateFolder={createFolder} />
+				<div className="mt-10">
+					{folders.map((folder) => (
+						<p key={folder.id}>{folder.name}</p>
+					))}
+				</div>
 			</div>
 		</div>
 	)

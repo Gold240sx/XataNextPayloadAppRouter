@@ -37,16 +37,16 @@ const CookiesPopup = () => {
 
 	const cookiesFormerlySaved = cookies.cookiesSaved
 
-	// if (cookiesFormerlySaved) return null
-
 	useLayoutEffect(() => {
-		// Focus the input element when the component mounts
+		// Focus the accept all button when the component mounts
 		acceptAllBtnRef.current?.focus()
 	}, [])
 
 	useEffect(() => {
 		updateCookieJar(cookies)
-		console.log("Cookie Jar: ", cookieJar)
+		if (cookiesFormerlySaved) {
+			document.body.classList.remove("cookiesAlert--active")
+		}
 	}, [cookies])
 
 	const closePopup = () => {
@@ -113,9 +113,19 @@ const CookiesPopup = () => {
 													<Button
 														ref={acceptAllBtnRef}
 														variant="link"
-														onClick={() =>
+														onClick={() => {
+															setCookies({
+																neccessaryCookies:
+																	true,
+																functionalCookies:
+																	true,
+																analyticsCookies:
+																	true,
+																cookiesSaved:
+																	true,
+															})
 															setShowPopup(false)
-														}
+														}}
 														className="text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 grow hover:no-underline bg-white rounded-xl shadow-xl">
 														Accept all cookies
 													</Button>
@@ -164,9 +174,6 @@ const CookiesPopup = () => {
 																}
 																<Link
 																	href="/cookie-policy"
-																	prefetch={
-																		showPopupDetails
-																	}
 																	target="_blank"
 																	className="underline ml-2 text-sky-500">
 																	Learn more

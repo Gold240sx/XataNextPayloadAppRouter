@@ -32,7 +32,10 @@ export const LocalStorageProvider: React.FC<{ children: React.ReactNode }> = ({
 		useState<boolean>(false)
 
 	const [cookieJar, setCookieJar] = useState(() => {
-		const storedCookieJar = localStorage.getItem("cookieJar")
+		let storedCookieJar
+		if (typeof window !== "undefined") {
+			storedCookieJar = localStorage?.getItem("cookieJar")
+		}
 		if (storedCookieJar) {
 			let updatedCookieJar = JSON.parse(storedCookieJar)
 			updatedCookieJar.neccessaryCookies = true
@@ -66,7 +69,6 @@ export const LocalStorageProvider: React.FC<{ children: React.ReactNode }> = ({
 			const savedCookieJar = localStorage.getItem("cookieJar")
 			if (savedCookieJar) {
 				setCookieJar(JSON.parse(savedCookieJar))
-				console.log("Saved Cookie Jar: ", savedCookieJar)
 			}
 		}
 	}, [])

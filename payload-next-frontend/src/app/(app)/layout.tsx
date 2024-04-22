@@ -7,13 +7,15 @@ import localFont from "next/font/local"
 import { ThemeModeScript } from "flowbite-react"
 import { ClerkProvider } from "@clerk/nextjs"
 import { LocalStorageProvider } from "@/context/localStorageContext"
-import CookiesPopup from "../myComponents/site-wide/CookiesPopup"
+import { ReactQueryProvider } from "@/context/reactQueryContext"
+import CookiesPopup from "../myComponents/site-wide/Cookies/CookiesPopup"
 import Nav from "@/components/Nav"
 import "../styles/globals.css"
 import "../styles/sass/sass-index.scss"
 
 import { Toaster } from "@/components/shad-cn/sonner"
-import CookieJarView from "../myComponents/site-wide/CookieJarView"
+import CookieJarView from "../myComponents/site-wide/Cookies/CookieJarView"
+import ChatBot_Chat_Widget from "../myComponents/site-wide/Chatbot/ChatBotWidget"
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -54,11 +56,14 @@ export default function RootLayout({
 				<LocalStorageProvider>
 					<body
 						className={`${inter.className} flex flex-col min-h-screen relative cookiesAlert--active`}>
-						<Nav />
-						{children}
-						<Toaster />
-						<CookiesPopup />
-						<CookieJarView />
+						<ReactQueryProvider>
+							<Nav />
+							{children}
+							<Toaster />
+							<CookiesPopup />
+							<ChatBot_Chat_Widget />
+							<CookieJarView />
+						</ReactQueryProvider>
 					</body>
 				</LocalStorageProvider>
 				{/* <Analytics /> */}

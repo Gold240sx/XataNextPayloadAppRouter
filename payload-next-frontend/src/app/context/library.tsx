@@ -1,8 +1,19 @@
 // import React from "react"
+import em1 from "@/assets/images/employees/em1.png"
+import em2 from "@/assets/images/employees/em2.png"
+import em3 from "@/assets/images/employees/em3.png"
+import { BsGithub } from "react-icons/bs"
+import { ImLinkedin } from "react-icons/im"
+import { AiFillInstagram } from "react-icons/ai"
+import { BsMeta } from "react-icons/bs"
+import { BsGoogle } from "react-icons/bs"
+import { websiteSourceMap } from "./chatBotData/websiteSourceMap"
+
+const ChatbotData = websiteSourceMap
 
 const SiteParams = {
 	companyName: "",
-	devMode: true,
+	devMode: false,
 	adminContext: {
 		adminEmail: "240designworks@gmail.com",
 		clerkAdminRole: "org:admin",
@@ -38,6 +49,64 @@ const SiteParams = {
 		your preferences below and update them at any time by visiting your 'Account Settings' 
 		page.`,
 		cookieFullPolicyDescription: "",
+	},
+	supportStaff: [
+		{
+			name: "Michael",
+			email: "240designworks@gmail.com",
+			photo: em1,
+		},
+		{
+			name: "Emily",
+			email: "testEmail@email.com",
+			photo: em2,
+		},
+		{
+			name: "Erica",
+			email: "testEmail@email.com",
+			photo: em3,
+		},
+	],
+	socialMedia: [
+		{
+			name: "Meta",
+			url: "",
+			icon: BsMeta,
+		},
+		{
+			name: "LinkedIn",
+			url: "",
+			icon: ImLinkedin,
+		},
+		{
+			name: "Google",
+			url: "",
+			icon: BsGoogle,
+		},
+		{
+			name: "Instagram",
+			url: "",
+			icon: AiFillInstagram,
+		},
+		{
+			name: "GitHub",
+			url: "",
+			icon: BsGithub,
+		},
+	],
+	GPTData: {
+		chatbotPrompt: `You are a helpful customer support chatbot embedded on a book store website. You are able to answer questions about the website and its content.
+			You are also able to answer questions about the books in the store. Use this bookstore metadata to answer the customer questions:
+			${ChatbotData}
+
+			Only include links in markdown format.
+			Example: 'You can browse our books [here](https://www.example.com/books)'.
+			Other than links, use regular text.
+
+			Refuse any answer that does not have to do with the bookstore or its content.
+			Provide short, concise answers. Do not provide any personal information.
+		`,
+		chatbotData: ChatbotData,
 	},
 }
 

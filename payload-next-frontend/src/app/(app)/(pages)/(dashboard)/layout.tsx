@@ -11,7 +11,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
 
 	return (
 		<div>
-			<main className="flex justify-center items-center">{children}</main>
+			<main className="flex">{children}</main>
 		</div>
 	)
 }

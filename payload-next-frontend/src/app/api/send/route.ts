@@ -1,6 +1,6 @@
 import { z } from "zod"
 import { EmailTemplate } from "emails/Projects/basic/basic-email-template"
-import { ContactFormSchema } from "@/app/(app)/(pages)/(public)/contact/contactFormSchema"
+import { ContactFormSchema } from "../../(app)/(pages)/(public)/contact/contactFormSchema"
 import { NextResponse } from "next/server"
 import { Resend } from "resend"
 import * as React from "react"

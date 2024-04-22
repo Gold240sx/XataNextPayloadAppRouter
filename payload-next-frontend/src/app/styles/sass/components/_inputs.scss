@@ -88,3 +88,11 @@ input.inline-input:disabled::placeholder {
 .inline-button:hover {
 	background-color: aquamarine;
 }
+
+// gets rid of the x icon on the right side of the input.
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+	display: none;
+}
