@@ -22,7 +22,7 @@ const PlugPage = () => {
 					},
 				]}
 			/>
-			<div className="max-w-[700px] mx-auto mt-16 flex justify-center flex-col gap-4">
+			<div className="max-w-[700px]   mx-auto mt-16 flex justify-center flex-col gap-4">
 				Plug Page
 			</div>
 		</div>

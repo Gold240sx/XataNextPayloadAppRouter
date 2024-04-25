@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react"
 import { auth } from "@clerk/nextjs"
 import { redirect } from "next/navigation"
+import { Sidebar } from "@/myComponents/dashboard/Sidebar"
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
 	const { userId, sessionClaims, orgRole, has } = auth()
@@ -10,8 +11,9 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
 	}
 
 	return (
-		<div>
-			<main className="flex">{children}</main>
+		<div className="w-full min-h-screen flex flex-row relative">
+			<Sidebar />
+			<div className="flex">{children}</div>
 		</div>
 	)
 }

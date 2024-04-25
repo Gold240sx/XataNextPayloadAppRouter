@@ -14,7 +14,7 @@ const CookiePolicy = () => {
 					},
 				]}
 			/>
-			<div className="max-w-[700px] mx-auto mt-16 flex justify-center flex-col gap-4">
+			<div className="max-w-[700px]  mx-auto mt-16 flex justify-center flex-col gap-4">
 				<h1>Cookie Policy</h1>
 				<p>
 					When you visit any of our websites, it may store or retrieve

@@ -1,0 +1,17 @@
+.nav-group__toggle {
+	align-items: center !important;
+
+	.nav-group__label {
+		font-size: 18px;
+	}
+}
+
+.nav-group__content {
+	margin-left: 2rem;
+
+	#nav-users,
+	#nav-blogs,
+	* {
+		font-size: 14px;
+	}
+}

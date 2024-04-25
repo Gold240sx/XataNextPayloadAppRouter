@@ -50,7 +50,7 @@ const UsersPage = async () => {
 					},
 				]}
 			/>
-			<div className="max-w-[700px] mx-auto mt-16 flex justify-center flex-col gap-4">
+			<div className="max-w-[700px]  ml-20 mx-auto mt-16 flex justify-center flex-col gap-4">
 				{/* <h1>Dashboard Page</h1>
 				<UsersTable columns={columns} data={formatedAllUserList} /> */}
 				{/* <UsersTable /> */}

@@ -5,11 +5,15 @@ import { Inter, Roboto_Mono } from "next/font/google"
 import Script from "next/script"
 import localFont from "next/font/local"
 import { ThemeModeScript } from "flowbite-react"
+import { ClerkProvider } from "@clerk/nextjs"
 import { LocalStorageProvider } from "@/context/localStorageContext"
 import { ReactQueryProvider } from "@/context/reactQueryContext"
-
 import CookiesPopup from "@/myComponents/site-wide/Cookies/CookiesPopup"
 import Nav from "@/components/Nav"
+import "./styles/globals.css"
+import "./styles/sass/sass-index.scss"
+
+import { Toaster } from "@/components/shad-cn/sonner"
 import CookieJarView from "@/myComponents/site-wide/Cookies/CookieJarView"
 import ChatBot_Chat_Widget from "@/myComponents/site-wide/Chatbot/ChatBotWidget"
 
@@ -38,34 +42,33 @@ export const viewport: Viewport = {
 	userScalable: false,
 }
 
-export default function MainProjectLayout({
+export default function RootLayout({
 	children,
 }: Readonly<{
 	children: React.ReactNode
 }>) {
 	return (
-		<div className={`${inter.variable} ${roboto_mono.variable}`}>
-			<LocalStorageProvider>
-				<div
-					className={`${inter.className} flex flex-col min-h-screen relative cookiesAlert--active`}>
-					<ReactQueryProvider>
-						<Nav />
-						{children}
-						<CookiesPopup />
-						<ChatBot_Chat_Widget />
-						<CookieJarView />
-					</ReactQueryProvider>
-				</div>
-			</LocalStorageProvider>
-			{process.env.NODE_ENV === "production" && (
-				<Script
-					// for Umami Analytics
-					src="https://umami.moinulmoin.com/script.js"
-					data-website-id="3a5986aa-675b-4076-94d7-cee4c1eb11f5"
-				/>
-			)}
-			{/* <Analytics /> */}
-		</div>
+		<ClerkProvider>
+			<html
+				lang="en"
+				//  "add ${roboto.className} with my local fonts"
+				className={`${inter.variable} ${roboto_mono.variable}`}>
+				<body
+					className={`${inter.className} flex flex-col min-h-screen relative`}>
+					{/* //cookiesAlert--active */}
+					{children}
+					<Toaster />
+				</body>
+				{process.env.NODE_ENV === "production" && (
+					<Script
+						// for Umami Analytics
+						src="https://umami.moinulmoin.com/script.js"
+						data-website-id="3a5986aa-675b-4076-94d7-cee4c1eb11f5"
+					/>
+				)}
+				{/* <Analytics /> */}
+			</html>
+		</ClerkProvider>
 	)
 }
 

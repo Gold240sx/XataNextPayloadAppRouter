@@ -1,6 +1,7 @@
 "use client"
 import React from "react"
 import { HomeIcon } from "@heroicons/react/20/solid"
+import { UserButton, useUser, useAuth } from "@clerk/nextjs"
 import Link from "next/link"
 
 type BreadcrumbsProps = {
@@ -12,6 +13,7 @@ type BreadcrumbsProps = {
 }
 
 const Breadcrumbs = ({ pages }: BreadcrumbsProps) => {
+	const { user, isLoaded } = useUser()
 	return (
 		<nav
 			className="flex w-full pt-4 px-10 items-start"
@@ -20,7 +22,7 @@ const Breadcrumbs = ({ pages }: BreadcrumbsProps) => {
 				<li>
 					<div>
 						<Link
-							href="/"
+							href={`${user && isLoaded ? "/dashboard" : "/"}`}
 							className="text-gray-400 hover:text-gray-500">
 							<HomeIcon
 								className="h-5 w-5 flex-shrink-0"

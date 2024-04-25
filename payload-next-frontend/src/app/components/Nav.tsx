@@ -36,7 +36,7 @@ const Nav = () => {
 						WebSite Name
 					</Link>
 				</div>
-				<form className="relative w-fit h-fit hover:w-48 rounded-full ease-in-out duration-200 transition-all border border-zinc-400 hover:border-zinc-600">
+				<form className="relative w-fit h-fit hover:w-48 rounded-full ease-in-out duration-200 transition-all border border-zinc-400 hover:border-zinc-600 mr-3">
 					<input
 						type="search"
 						name="search"
@@ -64,6 +64,11 @@ const Nav = () => {
 						</button>
 					</div>
 				</form>
+				{isLoaded && (
+					<div className="mx-2 flex gap-2">
+						<Link href="/blog">Blog</Link>
+					</div>
+				)}
 				{isLoaded && !user && (
 					<div className="flex gap-2">
 						<Button className="border border-zinc-200 rounded hover:bg-zinc-50 hover:border-zinc-300">

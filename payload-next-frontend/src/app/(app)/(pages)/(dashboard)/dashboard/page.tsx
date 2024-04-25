@@ -35,7 +35,7 @@ const Dashboard = async () => {
 	}
 
 	return (
-		<div>
+		<div className="pl-16">
 			<Breadcrumbs
 				pages={[
 					{
@@ -45,10 +45,10 @@ const Dashboard = async () => {
 					},
 				]}
 			/>
-			<div className="max-w-[700px] mx-auto mt-16 flex justify-center flex-col gap-4">
+			<div className="max-w-[700px]  ml-20 mx-auto mt-16 flex justify-center flex-col gap-4 px-10">
 				<h1>Dashboard Page</h1>
 				<FolderForm handleCreateFolder={createFolder} />
-				<div className="mt-10">
+				<div className="mt-10 px-4">
 					{folders.map((folder) => (
 						<p key={folder.id}>{folder.name}</p>
 					))}
