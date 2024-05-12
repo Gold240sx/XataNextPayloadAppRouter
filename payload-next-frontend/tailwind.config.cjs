@@ -1,6 +1,7 @@
 // import type { Config } from "tailwindcss" // (Typescript Files)
 import { withUt } from "uploadthing/tw"
 const flowbite = require("flowbite-react/tailwind")
+import colors from "tailwindcss/colors"
 import {
 	fluidExtractor,
 	fluidCorePlugins,
@@ -76,6 +77,7 @@ const config = withUt(
 						DEFAULT: "hsl(var(--card))",
 						foreground: "hsl(var(--card-foreground))",
 					},
+					flowbitePrimary: colors.blue,
 				},
 				boxShadow: {
 					inner: "inset 0 0 0 1px var(--border)",
@@ -189,6 +191,7 @@ const config = withUt(
 		extract: fluidExtractor(),
 		plugins: [
 			"prettier-plugin-tailwindcss",
+			flowbite.plugin(),
 			require("flowbite/plugin")({
 				charts: true,
 			}),

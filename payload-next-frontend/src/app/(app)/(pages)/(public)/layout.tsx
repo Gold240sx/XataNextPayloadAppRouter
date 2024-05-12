@@ -7,6 +7,7 @@ import localFont from "next/font/local"
 import { ThemeModeScript } from "flowbite-react"
 import { LocalStorageProvider } from "@/context/localStorageContext"
 import { ReactQueryProvider } from "@/context/reactQueryContext"
+import NextTopLoader from "nextjs-toploader"
 
 import CookiesPopup from "@/myComponents/site-wide/Cookies/CookiesPopup"
 import Nav from "@/components/Nav"
@@ -49,6 +50,7 @@ export default function MainProjectLayout({
 				<div
 					className={`${inter.className} flex flex-col min-h-screen relative cookiesAlert--active`}>
 					<ReactQueryProvider>
+						<NextTopLoader />
 						<Nav />
 						{children}
 						<CookiesPopup />

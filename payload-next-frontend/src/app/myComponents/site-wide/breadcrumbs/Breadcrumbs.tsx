@@ -15,10 +15,8 @@ type BreadcrumbsProps = {
 const Breadcrumbs = ({ pages }: BreadcrumbsProps) => {
 	const { user, isLoaded } = useUser()
 	return (
-		<nav
-			className="flex w-full pt-4 px-10 items-start"
-			aria-label="Breadcrumb">
-			<ol role="list" className="flex items-center space-x-4">
+		<nav className="flex w-full pt-4 items-start" aria-label="Breadcrumb">
+			<ol role="list" className="ml-14 flex items-center space-x-4">
 				<li>
 					<div>
 						<Link

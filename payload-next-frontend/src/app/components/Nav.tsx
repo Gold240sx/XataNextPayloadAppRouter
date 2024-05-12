@@ -3,6 +3,7 @@ import React, { useEffect } from "react"
 import Link from "next/link"
 import { UserButton, useUser, useAuth } from "@clerk/nextjs"
 import NavbarAdminBlock from "./NavbarAdminBlock"
+import { HiUserCircle } from "react-icons/hi"
 import { Button } from "@/components/shad-cn/button"
 import { SiteParams } from "../context/library"
 
@@ -65,18 +66,25 @@ const Nav = () => {
 					</div>
 				</form>
 				{isLoaded && (
-					<div className="mx-2 flex gap-2">
-						<Link href="/blog">Blog</Link>
-					</div>
+					<Link href="/blog">
+						<div className="mx-2 flex gap-2">Blog</div>
+					</Link>
 				)}
 				{isLoaded && !user && (
 					<div className="flex gap-2">
-						<Button className="border border-zinc-200 rounded hover:bg-zinc-50 hover:border-zinc-300">
+						{/* <Button className="border border-zinc-200 rounded hover:bg-zinc-50 hover:border-zinc-300">
 							<Link href="sign-up">Sign Up</Link>
 						</Button>
 						<Button className="border border-zinc-200 rounded hover:bg-zinc-50 hover:border-zinc-300">
 							<Link href="sign-in">Sign In</Link>
-						</Button>
+						</Button> */}
+						<Link href="sign-in">
+							<button
+								type="button"
+								className="bg-transparent my-auto flex">
+								<HiUserCircle className="text-black text-4xl" />
+							</button>
+						</Link>
 					</div>
 				)}
 				{isLoaded && user && (

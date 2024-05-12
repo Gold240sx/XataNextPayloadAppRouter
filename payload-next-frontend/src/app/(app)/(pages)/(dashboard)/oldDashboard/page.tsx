@@ -35,7 +35,7 @@ const Dashboard = async () => {
 	}
 
 	return (
-		<div className="pl-16">
+		<div className="">
 			<Breadcrumbs
 				pages={[
 					{

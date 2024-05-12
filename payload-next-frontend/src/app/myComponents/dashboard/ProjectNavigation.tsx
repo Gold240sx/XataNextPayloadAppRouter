@@ -86,19 +86,19 @@ const ProjectNavigation = ({
 				<Link
 					href="#"
 					className="flex flex-row gap-3 place-items-center">
-					<UserIcon className="w-8 rounded-full stroke-2 stroke-rose-800 bg-rose-200/70" />
+					<UserIcon className="w-8 rounded-full bg-rose-200/70" />
 					<p className="tracking-wide text-neutral-700">Steve Jobs</p>
 				</Link>
 				<Link
 					href="#"
 					className="flex flex-row gap-3 place-items-center">
-					<UserIcon className="w-8 rounded-full stroke-2 stroke-emerald-800 bg-emerald-200/70" />
+					<UserIcon className="w-8 rounded-full bg-emerald-200/70" />
 					<p className="tracking-wide text-neutral-700">Joe Rogan</p>
 				</Link>
 				<Link
 					href="#"
 					className="flex flex-row gap-3 place-items-center">
-					<UserIcon className="w-8 rounded-full stroke-2 stroke-indigo-800 bg-indigo-200/70" />
+					<UserIcon className="w-8 rounded-full bg-indigo-200/70" />
 					<p className="tracking-wide text-neutral-700">Elon Musk</p>
 				</Link>
 			</div>

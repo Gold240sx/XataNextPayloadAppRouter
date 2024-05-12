@@ -36,10 +36,13 @@
 			"@/context/*": ["src/app/context/*"],
 			"@/components/*": ["src/app/components/*"],
 			"@/dashboard/*": ["src/app/(app)/(pages)/(dashboard)/*"],
+			"@/data/*": ["src/app/data/*"],
 			"@/dependencyIndex": ["src/dependencies/1_index"],
 			"@/emails/*": ["../payload-next-frontend/emails/*"],
 			"@/functions/*": ["src/app/functions/*"],
-			"@/lib/": ["src/lib/"],
+			"@/helpers/*": ["src/app/helpers/*"],
+			"@/hooks/*": ["src/app/hooks/*"],
+			"@/lib/": ["src/lib"],
 			"@/myComponents/*": ["src/app/myComponents/*"],
 			"@payload-config": ["./src/payload.config.ts"],
 			"@/publicPages/*": ["src/app/(app)/(pages)/(public)/*"],
@@ -52,6 +55,7 @@
 			"@/sassUtilities/*": ["src/app/styles/sass/sorted/utilities/*"],
 			"@/sassVendors/*": ["src/app/styles/sass/sorted/vendors/*"],
 			"@/shadcn/*": ["src/app/components/*"],
+			"@/styles/*": ["src/app/styles/*"],
 			"@/utils/*": ["src/utils/*"]
 		}
 	}
